@@ -89,7 +89,7 @@ class LinkedList:
                 itr.next_node = itr.next_node.next_node
                 break
 
-            itr.next_node
+            itr = itr.next_node
             count += 1
 
     def insert_at(self, index: int, val):
@@ -100,9 +100,8 @@ class LinkedList:
             self.add_to_beginning(val)
             return
 
-        itr = self.root
         count = 0
-
+        itr = self.root
         while itr:
             if count == index - 1:
                 node = Node(val, itr.next_node)
