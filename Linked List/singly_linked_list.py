@@ -113,11 +113,14 @@ class LinkedList:
 
 if __name__ == '__main__':
     linked_list = LinkedList()
-    linked_list.insert_list_values(['red', 'pink', 'black', 'grey'])
-    linked_list.insert_at(0, 'cyan')
-    linked_list.insert_at(2, 'purple')
+    linked_list.add_to_beginning(5)
+    linked_list.add_to_beginning(10)
+    linked_list.add_to_beginning(6)
+    # linked_list.insert_list_values(['red', 'pink', 'black', 'grey'])
+    # linked_list.insert_at(0, 'cyan')
+    # linked_list.insert_at(2, 'purple')
     linked_list.print_linked_list()
-    linked_list.remove_at(2)
+    linked_list.remove_at(1)
     linked_list.print_linked_list()
     logger.info(
         f'number of elements in a linked list {linked_list.get_length()}')
