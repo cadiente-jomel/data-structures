@@ -110,6 +110,17 @@ class LinkedList:
             count += 1
             itr = itr.next_node
 
+    def find(self, val):
+        idx = 0
+        itr = self.root
+        while itr:
+            if itr.data == val:
+                return f'{itr.data} found with a index of {idx}'
+            itr = itr.next_node
+            idx += 1
+
+        return 'value not found'
+
 
 if __name__ == '__main__':
     linked_list = LinkedList()
@@ -119,6 +130,7 @@ if __name__ == '__main__':
     # linked_list.insert_list_values(['red', 'pink', 'black', 'grey'])
     # linked_list.insert_at(0, 'cyan')
     # linked_list.insert_at(2, 'purple')
+    print(linked_list.find(10))
     linked_list.print_linked_list()
     linked_list.remove_at(1)
     linked_list.print_linked_list()

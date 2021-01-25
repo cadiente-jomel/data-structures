@@ -109,6 +109,17 @@ class LinkedList:
             itr = itr.next
         logger.info(linked_list_str)
 
+    def find(self, val):
+        idx = 0
+        itr = self.head
+        while itr:
+            if itr.data == val:
+                return f'{itr.data} found with a index of {idx}'
+            itr = itr.next
+            idx += 1
+
+        return 'value not found'
+
 
 if __name__ == '__main__':
     ll = LinkedList()
@@ -119,6 +130,7 @@ if __name__ == '__main__':
     ll.insert_at(1, 7)
     ll.insert_at(0, 11)
     ll.add_to_beginning(30)
+    logger.info(ll.find(20))
     # ll.remove_at(1)
     ll.print()
     ll.get_length()
