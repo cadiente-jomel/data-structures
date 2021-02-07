@@ -108,6 +108,37 @@ class BinarySearchTreeNode:
 
         return sum
 
+    def delete(self, val):
+        if val < self.data:  # check if val is less than the current node
+            if self.left:  # check if left node exist
+                # call left node delete method recursively
+                self.left = self.left.delete(val)
+        elif val > self.data:  # val is greater than the current node
+            if self.right:  # right node exist
+                # call right node delete method recursively
+                self.right = self.right.delete(val)
+        else:  # it means the val and current node is equal
+            if self.left is None and self.right is None:  # if the left and right is none return None
+                return None
+
+            if self.left is None:  # if left is none return right node
+                return self.right
+
+            if self.right is None:  # if right is none return left node
+                return self.left
+
+            # if both left and right node are not empty
+            # min_val = self.right.find_min()  # get the minimum value to right node
+            # self.data = min_val  # replace the current node with the min value
+            # and finally remove the min val to its current position
+            # self.right = self.right.delete(min_val)
+
+            max_val = self.left.find_max()  # get the maximum value to left node
+            self.data = max_val  # replace the current node with the max value
+            self.left = self.left.delete(max_val)
+
+        return self
+
 
 def build_tree(elements):  # helper function
     root = BinarySearchTreeNode(elements[0])
@@ -129,3 +160,5 @@ if __name__ == "__main__":
     print("In order traversal:", numbers_tree.in_order_traversal())
     print("Pre order traversal:", numbers_tree.pre_order_traversal())
     print("Post order traversal:", numbers_tree.post_order_traversal())
+    print("Delete:", numbers_tree.delete(15))
+    print("In order traversal:", numbers_tree.in_order_traversal())
