@@ -19,6 +19,22 @@ class DFS:
                 return self.depth_first_search(node, self.visited)
             return self.visited
 
+    def iter_dfs(self, vertex):
+        visited_nodes = []
+        stack = [vertex]
+
+        path = []
+
+        while len(stack) > 0:
+            v = stack.pop()
+            if v not in visited_nodes:
+                visited_nodes.append(v)
+                path.append(v)
+                for neighbour in self.graph_dict[v]:
+                    if neighbour not in visited_nodes:
+                        stack.append(neighbour)
+        return path
+
 
 if __name__ == '__main__':
     routes = [
@@ -33,4 +49,5 @@ if __name__ == '__main__':
 
     g = DFS(routes)
     # print(g.graph_dict)
-    print(g.depth_first_search('Mumbai'))
+    # print(g.depth_first_search('Mumbai'))
+    print(g.iter_dfs('Mumbai'))
