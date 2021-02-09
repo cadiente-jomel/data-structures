@@ -1,4 +1,8 @@
 class DFS:
+    """
+    I used directed graph here
+    """
+
     def __init__(self, edges):
         self.edges = edges
         self.graph_dict = {}
