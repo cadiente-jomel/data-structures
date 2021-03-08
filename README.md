@@ -18,6 +18,7 @@ Compilation of different kinds of data structures and algorithms
 - Depth First Search
 - Sorting
   - Bubble Sort
+  - Selection Sort
 - Searching
   - Binary Search Tree
 
