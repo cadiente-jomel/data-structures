@@ -20,6 +20,7 @@ Compilation of different kinds of data structures and algorithms
   - Bubble Sort
   - Selection Sort
   - Insertion Sort
+  - Merge Sort
 - Searching
   - Binary Search Tree
 
